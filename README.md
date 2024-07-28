@@ -1,0 +1,1 @@
+this is a career website buit and deployed with flask and other frameworks
