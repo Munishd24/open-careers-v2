@@ -5,7 +5,7 @@ app = Flask(__name__)
 JOBS = [
 {
     'id' : 1,
-    'title': 'Data Aanlyst',
+    'title': 'Data Analyst',
     'location' : 'Chennai',
     'salary' : 'Rs. 30,00,000'
 },
