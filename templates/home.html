@@ -3,63 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sukdik Careers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Open Careers</title>
     <style>
-        #body{
-            background-image:url(https://media.istockphoto.com/id/1369199360/photo/portrait-of-a-handsome-young-businessman-working-in-office.jpg?s=612x612&w=is&k=20&c=AFaqGoWt6S0yimt3Og-yzIGfwPJwLXO-NZqVEstyzbY=);
-        }
-
-        h1 {
-            font-size: 40px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: normal;
-            color:rgb(7, 175, 241);
-            text-align: center
-        }
-
-        #banner {
-            width:100%;
+        #banner{
             height: 360px;
-            object-fit:cover
+            object-fit: cover;
+            width: 100%
         }
-
-        h2{
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            font-size: 32px;
-            color: rgb(7, 175, 241);
-            text-align:center;
-            font-weight:normal
-        }
-
-        .bodytext{
-            font-family:'Arial Narrow Bold', sans-serif
-        }
-
-        p{
-            font-family: 'Courier New', Courier, monospace;
-            color:rgb(4, 4, 4)
-        }
-
-        #container{
-            max-width: 720px;
-            margin: 0 auto 0 auto;
-        }
-
-        
     </style>
 </head>
 <body>
-     <div id="container">
-    <h1>Open Careers</h1>
-    <img id="banner" src="file:///C:/Users/Munish/Playground/flask-web/static/banner.jpg">
-    <h2>About open careers</h2>
-    <p class="bodytext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nesciunt aperiam temporibus molestias saepe. Incidunt possimus quae dolores sunt laborum explicabo. Veniam nulla numquam vitae voluptates quas, labore iste enim?</p>
-    <h2>Open position</h2>
-    <p class="bodytext">TODO-shows us the jobs</p>
-    <div style="text-align:center;">
-    <button>Contact Us</button>
-    <p style="font-size:small;
-    font-family: Arial, Helvetica, sans-serif;">Copyright 1911,Trade center
+     <div class="container">
+    <h1 class="text-center mt-2 mb-4">
+        {{company_name}} Careers
+    </h1>
+    <img id="banner" src="file:///C:/Users/Munish/Playground/flask-web/static/open.jpg">
+    <h2 class="text-center mt-4">About open careers</h2>
+    <p class="lead">At Open careers, we understand that finding the right job can be challenging. That's why we've created a user-friendly platform that allows you to search for job openings tailored to your skills, experience, and career aspirations. Our advanced search filters and personalized job recommendations make it easy to find opportunities that align with your goals. Create a profile, upload your resume, and apply to jobs with just a few clicks. Join our community and take the next step in your professional journey.</p>
+    <h2 class="text-center mt-2 mb-4">Open position</h2>
+    <p>
+        {% for job in jobs %}
+            {% include 'jobitem.html' %}
+        {% endfor %}
+    </p>
+    <div class="text-center">
+    <button class="btn btn-primary btn-lg">Contact Us</button>
+    <p class="fst-italic">Copyright 1911,Trade center
     </p>
     </div>
 </body>
